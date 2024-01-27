@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="calculator.css">
+    <link rel="stylesheet" href="calculator.js">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Calculater by using JS</title>
+</head>
+<body>
+<div class="container">
+     <div class="CalculaterItems">
+
+        <input type="text" readonly value="0" class="CalculaterNumber" id="value">
+
+         <div class="CalculaterBTN">
+             <button class="btn span-2 btn-op"  onclick="erase()">Clear</button>
+             <button class="btn btn-op"  onclick="delet()">&larr;</button><!--html encoded arrow-->
+             <button class="btn btn-op"  onclick="operation(4)">&divide;</button>
+                      <!--second(4)-->
+             <button class="btnNb"  onclick="addNb(7)">7</button>
+             <button class="btnNb"  onclick="addNb(8)">8</button>
+             <button class="btnNb"  onclick="addNb(9)">9</button>
+                     
+             <button class="btn btn-op"   onclick="operation(3)">x</button>
+                    <!---third(4)-->
+             <button class="btnNb"  onclick="addNb(4)">4</button>
+             <button class="btnNb"  onclick="addNb(5)">5</button>
+             <button class="btnNb"  onclick="addNb(6)">6</button>
+
+             <button class="btn btn-op"  onclick="operation(2)">-</button>
+
+                        <!---fourth(4)-->
+             <button class="btnNb"  onclick="addNb(1)">1</button>
+             <button class="btnNb"  onclick="addNb(2)">2</button>
+             <button class="btnNb"  onclick="addNb(3)">3</button>
+
+             <button class="btn btn-op"  onclick="operation(1)">+</button>
+                       <!--fifth(2)-->
+             <button class="btnNb span-3 colorbtn"  onclick="addNb(0)">0</button>
+             <button class="btn btn-op"  onclick="eq()">=</button>
+
+        </div>
+
+     </div>
+</div>
+<script>
+    const v = document.getElementById("value");
+function addNb(Nb){
+    v.value += Nb;
+}
+function erase(){
+    v.value = ""; 
+}
+
+function delet(){
+     let del = v.value;
+     let delet = del.substring (0, del.length - 1);
+     v.value = delet;
+}
+
+
+function operation(op){
+    num1 = v.value;
+    v.value =""; 
+    currentop = op;
+}
+
+function eq(){
+    let num2 = v.value;
+    switch(currentop){
+        case 1:
+        v.value = parseInt(num1) + parseInt(num2);
+          break;
+          case 2:
+        v.value = parseInt(num1) - parseInt(num2);
+          break;
+          case 3:
+        v.value = parseInt(num1) * parseInt(num2);
+          break;
+          case 4:
+        v.value = parseInt(num1) / parseInt(num2);
+         break;
+    }
+}
+</script>
+</body>
+</html>

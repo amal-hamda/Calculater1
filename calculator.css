@@ -1,0 +1,41 @@
+.container{
+    text-align: center;
+}
+.CalculaterItems{
+    background-color: white;
+    max-width: 320px;;
+}
+.CalculaterNumber{
+    text-align: right; 
+    background-color: pink;
+    font-size: 2em;
+    border: 0;
+    padding: 0.3em;
+    text-align: right; 
+    width:calc(100% - 1.2rem);
+    height: 100px;
+    text-align: right; 
+}
+.CalculaterBTN{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);  
+}
+.btn{
+    border: 1px solid black;
+    height: 60px;
+}
+.btn:hover{
+    background-color: violet;
+}
+.btn-op{
+    background-color: rgb(192, 217, 255);
+}
+/*  first */
+
+.span-2{
+    grid-column: span 2;
+}
+/*  fifth  */
+.span-3{
+    grid-column: span 3;
+}
