@@ -1,41 +1,56 @@
-.container{
-    text-align: center;
+.container {
+  padding: 30px;
 }
-.CalculaterItems{
-    background-color: white;
-    max-width: 320px;;
-}
-.CalculaterNumber{
-    text-align: right; 
-    background-color: pink;
-    font-size: 2em;
-    border: 0;
-    padding: 0.3em;
-    text-align: right; 
-    width:calc(100% - 1.2rem);
-    height: 100px;
-    text-align: right; 
-}
-.CalculaterBTN{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);  
-}
-.btn{
-    border: 1px solid black;
-    height: 60px;
-}
-.btn:hover{
-    background-color: violet;
-}
-.btn-op{
-    background-color: rgb(192, 217, 255);
-}
-/*  first */
 
-.span-2{
-    grid-column: span 2;
+.CalculaterItems {
+  background-color: white;
+  border: 5px solid #000;
+  border-radius: 10px;
+  margin: 0 auto;
+  max-width: 320px;
+  overflow: hidden;
 }
-/*  fifth  */
-.span-3{
-    grid-column: span 3;
+
+.CalculaterNumber {
+  overflow: hidden;
+  text-align: right;
+  background-color: pink;
+  font-size: 2em;
+  border: 0;
+  padding: 0.3em;
+  text-align: right;
+  width: calc(100% - 1.2rem);
+  height: 100px;
+  text-align: right;
+}
+
+.CalculaterBTN {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.btnNb {
+    cursor: pointer;
+}
+
+.btn {
+  border: 1px solid black;
+  height: 60px;
+}
+
+.btn:hover {
+  background-color: violet;
+  cursor: pointer;
+}
+
+.btn-op {
+  background-color: rgb(192, 217, 255);
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.span-3 {
+  grid-column: span 2;
 }
