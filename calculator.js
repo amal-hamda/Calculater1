@@ -9,7 +9,9 @@
     data.v = document.getElementById('value');
 
     document.querySelectorAll('.btnNb').forEach((el) => {
-      el.addEventListener('click', onNumberButtonClick);
+      el.addEventListener('click', (ev) =>
+        onNumberButtonClick(ev.target.innerText)
+      );
     });
 
     document.querySelectorAll('.btn-op').forEach((el) => {
@@ -40,10 +42,49 @@
         }
       }
     });
+
+    document.addEventListener('keyup', (event) => {
+      event.preventDefault();
+      switch (event.key) {
+        case '1':
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+        case '7':
+        case '8':
+        case '9':
+        case '0':
+        case '.':
+          onNumberButtonClick(event.key);
+          break;
+        case '+':
+          onOperationClick('1');
+          break;
+        case '-':
+          onOperationClick('2');
+          break;
+        case '*':
+          onOperationClick('3');
+          break;
+        case '/':
+          onOperationClick('4');
+          break;
+        case 'Enter':
+          onEqualClick();
+          break;
+        case 'Backspace':
+          onDeleteClick();
+          break;
+        case 'Escape':
+          onClearClick();
+          break;
+      }
+    });
   }
 
-  function onNumberButtonClick(ev) {
-    const val = ev.target.innerText;
+  function onNumberButtonClick(val) {
     if (data.v.value === '0' && val !== '.') data.v.value = val;
     else data.v.value += val;
   }
